@@ -1,0 +1,1390 @@
+@import url(vars.less);
+@import url(animations-webkit.less);
+@import url(animations.less);
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+@font-face {
+  font-family:"Baveuse";
+  src:url("Baveuse.eot?") format("eot"), url("Baveuse.woff") format("woff"), url("Baveuse.ttf") format("truetype"), url("Baveuse.svg#Baveuse") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: #666;
+  font-family: "Baveuse";
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: 2;
+  color: @white;
+}
+
+.play {
+  margin: 10px;
+}
+
+.play-btn, .stop-btn {
+  display: inline-block;
+  border-radius: 5px;
+  color: @black;
+  font-size: 20px;
+  margin: 0 10px;
+  padding: 12px 22px;
+  text-decoration: none;
+  background: @orange1;
+
+  &:hover {
+    background: @orange2;
+  }
+}
+
+.wrap {
+  .hd;
+  margin: 0 auto;
+  position: relative;
+
+  div[class^="scene"] {
+    .hd;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.main {
+  .hd;
+  position: relative;
+  background: @black;
+  overflow: hidden;
+}
+
+.dot {
+  width: 380px;
+  height: 380px;
+  border-radius: 190px;
+  background: @white;
+  position: absolute;
+  top: 114px;
+  left: 350px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.trail {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-right: 0 solid @black;
+  background: @black;
+
+  .radius {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50%;
+    z-index: 1;
+    background: @white;
+  }
+}
+
+.start .dot {
+  .animation( theDot linear 30s 0s forwards);
+}
+
+.start .trail {
+  .animation( theDotTrail linear 30s 0s forwards);
+}
+
+
+// ===========
+// Scene - 1
+// ===========
+
+.left-leg, .right-leg {
+  width: 285px;
+  height: 560px;
+  position: absolute;
+
+}
+
+.left-leg {
+  top: 15px;
+  left: 30px;
+  background: @green1;
+}
+
+.start .left-leg {
+  .animation( climb 1s 5.5s forwards);
+}
+
+.right-leg {
+  top: 15px;
+  right: 30px;
+  background: @orange1;
+}
+.start .right-leg {
+  .animation( climb 1s 5.5s forwards);
+}
+
+.clock {
+  width: 380px;
+  height: 380px;
+  border-radius: 190px;
+  background: @white;
+  position: absolute;
+  top: 114px;
+  left: 350px;
+  z-index: 1;
+  .transform( scale(40));
+}
+
+.start .clock {
+  .animation( clockInOut ease-in 6s forwards);
+}
+
+.clock-center {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: @black;
+  position: absolute;
+  top: 170px;
+  left: 170px;
+}
+
+.start .clock-hands {
+  .animation( hide 0.2s 4.5s forwards);
+}
+
+.small-hand-container, .big-hand-container {
+  width: 380px;
+  height: 380px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.start .small-hand-container {
+  .animation( spinningHands 4s forwards);
+}
+
+.start .big-hand-container {
+  .animation( spinningHands .2s 0s 20 forwards);
+}
+
+.small-hand {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 100px 10px;
+  border-color: transparent transparent @black transparent;
+  position: absolute;
+  top: 80px;
+  left: 180px;
+}
+
+.big-hand {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 170px 10px;
+  border-color: transparent transparent @black transparent;
+  position: absolute;
+  top: 10px;
+  left: 180px;
+}
+
+div[class^="num"] {
+  font-size: 45px;
+  color: @black;
+  position: absolute;
+}
+
+.num-1 {
+  top: 30px;
+  left: 260px;
+}
+
+.start .num-1 {
+  .animation( fall 1s 4.3s forwards);
+}
+
+.num-2 {
+  top: 90px;
+  left: 310px;
+}
+
+.start .num-2 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-3 {
+  top: 170px;
+  left: 340px;
+}
+
+.start .num-3 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-4 {
+  top: 250px;
+  left: 310px;
+}
+
+.start .num-4 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-5 {
+  top: 300px;
+  left: 250px;
+}
+
+.start .num-5 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-6 {
+  top: 330px;
+  left: 175px;
+}
+
+.start .num-6 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-7 {
+  top: 300px;
+  left: 100px;
+}
+
+.start .num-7 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-8 {
+  top: 250px;
+  left: 40px;
+}
+
+.start .num-8 {
+  .animation( fall 1s 4.2s forwards);
+}
+
+.num-9 {
+  top: 170px;
+  left: 10px;
+}
+
+.start .num-9 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-10 {
+  top: 90px;
+  left: 30px;
+}
+
+.start .num-10 {
+  .animation( fall 1s 4s forwards);
+}
+
+.num-11 {
+  top: 30px;
+  left: 100px;
+}
+
+.start .num-11 {
+  .animation( fall 1s 4.2s forwards);
+}
+
+.num-12 {
+  top: 10px;
+  left: 170px;
+}
+
+.start .num-12 {
+  .animation( fall 1s 4s forwards);
+}
+
+.jet-img {
+  position: absolute;
+  top: 10px;
+  left: 115px;
+  .transform( rotateY(90deg));
+}
+
+.start .jet-img {
+  .animation( rotateFly 1s 4.5s forwards);
+}
+
+.left-leg-img {
+ position: absolute;
+ top: -50px;
+ left: 70px;
+ opacity: 0.8;
+ z-index: 1;
+ .transform-origin( 50% -100% 0);
+ .transform( rotateZ(-15deg));
+}
+
+.start .left-leg-img {
+ .animation( leftLeg 1s .5s 5; hide .1s 5.5s forwards);
+}
+
+.right-leg-img {
+ position: absolute;
+ top: -40px;
+ left: 670px;
+ opacity: 0.8;
+ z-index: 1;
+ .transform-origin( 50% -100% 0);
+ .transform( rotateZ(15deg));
+}
+
+.start .right-leg-img {
+ .animation( rightLeg 1s .5s 5; hide .1s 5.5s forwards);
+}
+
+
+// ===========
+// Scene - 2
+// ===========
+
+.container-scene-2 {
+  width: 5220px;
+  height: 608px;
+  position: absolute;
+  top: 0;
+  left: -4140px;
+}
+
+.start .container-scene-2 {
+  .animation( slideRight linear 2s 8s forwards);
+}
+
+.hjb-blue-boxes {
+  .hd;
+  position: absolute;
+  top: 0;
+  right: 0;
+  .transform( scale(0));
+
+  div[class^="hjb-blue"] {
+    background: @blue1;
+    position: absolute;
+  }
+}
+
+.start .hjb-blue-boxes {
+  .animation( scaleIn linear 1s 5.5s forwards);
+}
+
+.hjb-text {
+  position: absolute;
+  top: 380px;
+  left: 340px;
+  z-index: 2;
+}
+
+.start .hjb-text {
+  .animation( hjbMove linear .6s 7.2s forwards);
+}
+
+.hjb-gun-img {
+  position: absolute;
+  top: 60px;
+  left: 250px;
+  z-index: 1;
+  opacity: 0.8;
+  .transform-origin( 100% 100% 0);
+  .transform( rotateZ(-90deg));
+}
+
+.start .hjb-gun-img {
+  .animation( hjbGun linear 2s 6.7s forwards);
+}
+
+.hjb-gun-blast {
+  position: absolute;
+  top: 180px;
+  left: 90px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.start .hjb-gun-blast {
+  .animation( showOpacity .2s 7.9s alternate);
+}
+
+.hjb-blue-1 {
+  width: 430px;
+  height: 210px;
+  top: 120px;
+  left: 30px;
+}
+
+.hjb-blue-2 {
+  width: 430px;
+  height: 125px;
+  top: 440px;
+  left: 30px;
+}
+
+.hjb-blue-3 {
+  width: 500px;
+  height: 300px;
+  top: 75px;
+  left: 510px;
+}
+
+.hjb-blue-4 {
+  width: 500px;
+  height: 30px;
+  top: 435px;
+  left: 510px;
+}
+
+.hjb-blue-5 {
+  width: 500px;
+  height: 30px;
+  top: 485px;
+  left: 510px;
+}
+
+.hjb-blue-6 {
+  width: 500px;
+  height: 30px;
+  top: 535px;
+  left: 510px;
+}
+
+.bars {
+  width: 3060px;
+  height: 500px;
+  position: absolute;
+  top: 60px;
+  left: 1080px;
+
+  div[class^="bar-"] {
+    width: 150px;
+    height: 500px;
+    float: right;
+    margin-left: 30px;
+  }
+}
+
+.bars-group-1 div {
+  background: @purple1;
+}
+
+.bars-group-2 div {
+  background: @purple2;
+}
+
+.bars-group-3 div {
+  background: @green2;
+}
+
+.high-kick {
+  .hd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.start .high-kick {
+  .animation( kickBack linear .5s 10s forwards);
+}
+
+.high-kick-box {
+  width: 1000px;
+  height: 470px;
+  margin: 80px auto 0;
+  background: @blue1;
+}
+
+.kick-img {
+  width: 396px;
+  height: 500px;
+  position: absolute;
+  top: 110px;
+  left: 540px;
+  opacity: 0.8;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url(../imgs/high-kick.png);
+  .transform-origin( 100% 100% 0);
+  .transform( rotate(-90deg) scale(1));
+}
+
+.start .kick-img {
+  .animation( kickImg linear 2s 8.5s forwards);
+}
+
+// ===========
+// Scene - 3
+// ===========
+
+.start .scene-3 {
+  .animation( slideLeft linear 1.5s 13.5s forwards);
+}
+
+.jg-text {
+  position: absolute;
+  top: 620px;
+  left: 332px;
+  font-size: 60px;
+  z-index: 1;
+}
+
+.start .jg-text {
+  .animation( jgText linear 3s 11s forwards);
+}
+
+.jg-box {
+  width: 250px;
+  height: 500px;
+  float: left;
+  margin: 60px 0 0 230px;
+  position: relative;
+  overflow: hidden;
+  background: @pink;
+  .transform( scale(1, 0));
+}
+
+.start .jg-box {
+  .animation( stretchOpen linear 1s 11s forwards);
+}
+
+.jg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+div[class^="bead"]{
+  position: absolute;
+  z-index: 1;
+  background: @pink;
+}
+
+.bead-1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  top: 244px;
+  left: 64px;
+}
+
+.start .bead-1 {
+  .animation( fall .5s 13s forwards);
+}
+
+.bead-2 {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  top: 252px;
+  left: 72px;
+}
+
+.start .bead-2 {
+  .animation( fall .5s 13.1s forwards);
+}
+
+.bead-3 {
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  top: 260px;
+  left: 84px;
+}
+
+.start .bead-3 {
+  .animation( fall .5s 13s forwards);
+}
+
+.bead-4 {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  top: 265px;
+  left: 100px;
+}
+
+.start .bead-4 {
+  .animation( fall .5s 13.1s forwards);
+}
+
+.bead-5 {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  top: 265px;
+  left: 143px;
+}
+
+.start .bead-5 {
+  .animation( fall .5s 13s forwards);
+}
+
+.bead-6 {
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  top: 260px;
+  left: 160px;
+}
+
+.start .bead-6 {
+  .animation( fall .5s 13.1s forwards);
+}
+
+.bead-7 {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  top: 252px;
+  left: 173px;
+}
+
+.start .bead-7 {
+  .animation( fall .5s 13s forwards);
+}
+
+.bead-8 {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  top: 244px;
+  left: 184px;
+}
+
+.start .bead-8 {
+  .animation( fall .5s 13.1s forwards);
+}
+
+.heart {
+  width: 246px;
+  height: 260px;
+  position: absolute;
+  top: 60px;
+  left: 595px;
+  .transform( scale(0));
+  background: url(../imgs/heart.png);
+}
+
+.heart.heart-left {
+  background-position: top left;
+  z-index: 2;
+}
+
+.start .heart.heart-left {
+  .animation( heartBreakLeft linear 2s 11.8s forwards);
+}
+
+.heart.heart-right {
+  background-position: bottom left;
+  z-index: 3;
+}
+
+.start .heart.heart-right {
+  .animation( heartBreakRight linear 2s 11.8s forwards);
+}
+
+
+// ===========
+// Scene - 4
+// ===========
+
+.container-scene-4 {
+  width: 2160px;
+  height: 1216px;
+  position: absolute;
+  top: 912px;
+  left: 1620px;
+}
+
+.start .container-scene-4 {
+  .animation( cpInOut linear 4.5s 13s forwards);
+}
+
+.cp-intro {
+  .hd;
+  position: absolute;
+  top: 180px;
+  left: 250px;
+
+  .cp-left {
+    width: 460px;
+    float: left;
+    margin-left: 100px;
+
+    div {
+      float: left;
+      background: @green3;
+    }
+  }
+
+  .cp-right {
+    width: 310px;
+    float: left;
+    margin-left: 30px;
+
+    div {
+      float: left;
+      background: @gold;
+    }
+  }
+}
+
+.start .cp-intro {
+  .animation( cpIntro linear 2.5s 15.5s forwards);
+}
+
+.cp-box-1 {
+  width: 110px;
+  height: 210px;
+  margin-top: 305px;
+
+  &:before {
+    content: "";
+    width: 20px;
+    height: 15px;
+    display: block;
+    float: left;
+    margin-top: -15px;
+    margin-left: 10px;
+    background: @green3;
+  }
+
+  &:after {
+    content: "";
+    width: 35px;
+    height: 25px;
+    display: block;
+    float: right;
+    margin-top: -25px;
+    margin-right: 15px;
+    background: @green3;
+  }
+}
+
+.cp-box-2 {
+  width: 190px;
+  height: 420px;
+  margin-top: 100px;
+  margin-left: 30px;
+
+  &:before {
+    content: "";
+    width: 50px;
+    height: 0;
+    display: block;
+    float: right;
+    margin-top: -20px;
+    border-top: 20px solid @green3;
+    border-left: 3px solid transparent;
+  }
+}
+
+.cp-box-3 {
+  width: 110px;
+  height: 275px;
+  margin-top: 245px;
+  margin-left: 20px;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    float: left;
+    margin-top: -25px;
+    border-bottom: 25px solid @green3;
+    border-right: 50px solid transparent;
+  }
+}
+
+.cp-box-4 {
+  width: 310px;
+  height: 140px;
+  margin-top: 155px;
+
+  &:before {
+    content: "";
+    width: 50px;
+    height: 10px;
+    display: block;
+    float: left;
+    margin-top: -10px;
+    margin-left: 145px;
+    background: @gold;
+  }
+
+  &:after {
+    content: "";
+    width: 45px;
+    height: 20px;
+    display: block;
+    float: right;
+    margin-top: -20px;
+    margin-right: 20px;
+    background: @gold;
+    .transform( skew(10deg));
+  }
+}
+
+.cp-box-5 {
+  width: 310px;
+  height: 125px;
+  margin-top: 30px;
+}
+
+.cp-box-6 {
+  width: 310px;
+  height: 35px;
+  margin-top: 25px;
+}
+
+.cp-main {
+  .hd;
+  position: absolute;
+  top: 608px;
+  left: 1080px;
+}
+
+.cp-img {
+  width: 434px;
+  height: 350px;
+  display: block;
+  background: url(../imgs/cp-img.png) no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  left: 100px;
+  top: 5px;
+  .transform( scale(1.3));
+  .transform-origin( 0 0);
+}
+
+.start .cp-img {
+  .animation( cpImg linear 3s 14.5s forwards);
+}
+
+.cp-phone {
+  position: absolute;
+  left: 60px;
+  top: 200px;
+  .transform( rotate(-60deg));
+  .transform-origin( 0 100%);
+}
+
+.start .cp-phone {
+  .animation( cpPhone linear 3s 14.5s forwards);
+}
+
+.cp-text {
+  font-size: 64px;
+  line-height: 1.2;
+  position: absolute;
+  top: 135px;
+  left: 75px;
+}
+
+.cp-box {
+  width: 760px;
+  height: 285px;
+  margin: 225px auto 0;
+  position: relative;
+  overflow: hidden;
+  background: @green4;
+}
+
+.cp-bolt {
+  width: 500px;
+  height: 40px;
+  background-image: url(../imgs/bolt.png);
+  background-position: 0 -80px;
+  position: absolute;
+  top: -16px;
+  left: -241px;
+  opacity: 0;
+}
+
+.start .cp-bolt {
+  .animation( show .3s 15.5s 4; bolt steps(2) .3s 15.5s 4 alternate);
+}
+
+.cp-flash {
+  width: 26px;
+  height: 26px;
+  border-radius: 16px;
+  border: 2px solid @white;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  opacity: 0;
+
+  &:before {
+    content: "";
+    width: 10px;
+    height: 5px;
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 8px;
+    background: @black;
+  }
+
+  &:after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 8px;
+    background: @black;
+  }
+}
+
+.start .cp-flash {
+  .animation( show .3s 15s 4);
+}
+
+
+// ===========
+// Scene - 5
+// ===========
+
+.container-scene-5 {
+  width: 1080px;
+  height: 1048px;
+  position: absolute;
+  top: 608px;
+  left: 0;
+}
+
+.start .container-scene-5 {
+  .animation( atIn linear 3s 17s forwards);
+}
+
+.at-intro {
+  width: 1080px;
+  height: 440px;
+
+  div {
+    float: left;
+    background: @yellow;
+  }
+}
+
+.archer-hands-up-img {
+  position: absolute;
+  top: 40px;
+  left: 410px;
+  opacity: 0.8;
+}
+
+.start .archer-hands-up-img {
+  .animation( slideLeft linear 4s 17.1s forwards);
+}
+
+.at-box-1 {
+  width: 140px;
+  height: 430px;
+  margin-top: 10px;
+  margin-left: 90px;
+}
+
+.at-box-2 {
+  width: 70px;
+  height: 435px;
+  margin-top: 5px;
+  margin-left: 70px;
+}
+
+.at-box-3 {
+  width: 600px;
+  height: 440px;
+  margin-left: 30px;
+}
+
+.at-main {
+  .hd;
+  position: relative;
+  left: 0;
+  .transform( perspective(0) rotateY(0deg) scale(1));
+  .transform-origin( 100% 50% 0);
+
+  div[class^="at-box"] {
+    height: 440px;
+    margin-top: 60px;
+    float: left;
+    background: @red1;
+  }
+}
+
+.start .at-main {
+  .animation( atOut linear 3s 17s forwards);
+}
+
+.container-at-text {
+  .hd;
+  position: absolute;
+  top: 0;
+  left: -750px;
+  z-index: 1;
+}
+
+.start .container-at-text {
+  .animation( atTextInOut linear 3s 17s forwards);
+}
+
+.at-text {
+  position: absolute;
+  bottom: 30px;
+  left: 150px;
+  font-size: 70px;
+}
+
+.start .at-text {
+  .animation( atTextSlide linear 3s 17s forwards);
+}
+
+.at-box-4 {
+  width: 130px;
+  margin-left: 295px;
+}
+
+.at-box-5 {
+  width: 200px;
+  margin-left: 20px;
+}
+
+.at-box-6 {
+  width: 340px;
+  margin-left: 15px;
+}
+
+.at-gun {
+  width: 538px;
+  height: 650px;
+  background: url(../imgs/at-gun-up.png) no-repeat;
+  background-position: 0 -1950px;
+  position: absolute;
+  top: 70px;
+  left: 560px;
+  opacity: 0.8;
+  .transform( scale(0.7));
+  .transform-origin( 0 0);
+}
+
+.start .at-gun {
+  .animation( atImgIn linear 1.5s 17s forwards; atGunUp steps(3) .3s 18.5s forwards);
+}
+
+.at-gun-blast {
+  width: 318px;
+  height: 308px;
+  background: url(../imgs/at-gun-blast.png);
+  position: absolute;
+  top: 155px;
+  left: -185px;
+  opacity: 0;
+}
+
+.start .at-gun-blast {
+  .animation( showOpacity .2s 19.2s forwards; hide .2s 19.5s forwards);
+}
+
+
+// ===========
+// Scene - 6
+// ===========
+
+.container-scene-6 {
+  width: 3000px;
+  height: 608px;
+  position: absolute;
+  top: 0;
+  left: -3000px;
+}
+
+.start .container-scene-6 {
+  .animation( jwInOut linear 4s 20s forwards);
+}
+
+.jw-intro {
+  width: 1920px;
+  height: 608px;
+  float: right;
+}
+
+div[class^="boxes-group"] {
+  width: 600px;
+  height: 608px;
+  float: right;
+  margin-left: 40px;
+
+  div[class^="jw-box"] {
+    width: 600px;
+  }
+
+  div[class^="jw-box"]:first-child {
+    height: 75px;
+    margin-top: 50px;
+  }
+  div[class^="jw-box"]:nth-child(2) {
+    height: 165px;
+    margin-top: 30px;
+  }
+  div[class^="jw-box"]:last-child {
+    height: 200px;
+    margin-top: 30px;
+  }
+}
+
+.boxes-group-1 div {
+  background: @blue3;
+}
+
+.boxes-group-2 div {
+  background: @blue4;
+}
+
+.boxes-group-3 div {
+  background: @purple3;
+}
+
+.jw-main {
+  .hd;
+  float: left;
+}
+
+.jw-img {
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+}
+
+.jw-glass {
+  position: absolute;
+  bottom: -10px;
+  left: 310px;
+}
+
+.start .jw-glass {
+  .animation( jwGlass linear .5s 22.2s 2 alternate);
+}
+
+.splash {
+  width: 160px;
+  height: 125px;
+  position: absolute;
+  top: 230px;
+  left: 285px;
+  opacity: 0;
+  background: url(../imgs/splash.png);
+  background-position: 0 0;
+}
+
+.start .splash {
+  .animation( show .1s 21.7s forwards; splash steps(4) .4s 21.8s forwards; hide .1s 22.2s forwards);
+}
+
+.jw-text {
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  top: 60px;
+  left: 135px;
+  text-align: center;
+
+  .jw-text-1 {
+    width: 100%;
+    position: absolute;
+    top: -150px;
+    left: 0;
+    font-size: 30px;
+    line-height: 2.5;
+  }
+
+  .jw-text-2 {
+    width: 100%;
+    position: absolute;
+    top: 550px;
+    left: 0;
+    font-size: 65px;
+    line-height: 1.3;
+  }
+}
+
+.start .jw-text {
+  .animation( jwTextOut linear 2s 22s forwards);
+
+  .jw-text-1 {
+    .animation( jwTextTopIn linear 2s 22s forwards);
+  }
+
+  .jw-text-2 {
+    .animation( jwTextBottomIn linear 2s 22s forwards);
+  }
+}
+
+.jw-box-10 {
+  width: 480px;
+  height: 530px;
+  margin-top: 35px;
+  margin-left: 530px;
+  overflow: hidden;
+  background: @orange2;
+  .transform( scale(2.5));
+  .transform-origin( 100% 50% 0);
+}
+
+.start .jw-box-10 {
+  .animation( jwMainInOut linear 2.5s 21.5s forwards);
+}
+
+.cannonball-run-img {
+  width: 550px;
+  height: 550px;
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  opacity: 0;
+  z-index: 1;
+  background-image: url(../imgs/cannonball-run.png);
+  background-position: 0 0;
+}
+
+.start .cannonball-run-img {
+  .animation( showOpacity .1s 20s forwards; cannonballRun steps(3) 0.2s 20s 7 alternate; hide .1s 21.2s forwards);
+}
+
+.cannonball-img {
+  width: 550px;
+  height: 400px;
+  display: block;
+  background-image: url(../imgs/cannonball-run.png);
+  background-position: 0 -1650px;
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  opacity: 0;
+  .transform( scale(0.4));
+}
+
+.start .cannonball-img {
+  .animation( cannonball 1s 21.3s forwards);
+}
+
+// ===========
+// Scene - 7
+// ===========
+
+.archer-end-img {
+  width: 270px;
+  height: 0;
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  background-image: url(../imgs/archer-end.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.start .archer-end-img {
+  .animation( arImgInOut linear 6s 24.4s forwards);
+}
+
+.ar-boxes {
+  width: 700px;
+  height: 255px;
+  margin-top: 620px;
+  margin-left: 335px;
+
+  div {
+    height: 255px;
+    margin-top: 0;
+    float: left;
+  }
+}
+
+.start .ar-boxes {
+  .animation( arBoxesIn linear .6s 23.8s forwards);
+}
+
+.ar-box-1 {
+  width: 395px;
+  background-color: @red2;
+  background-image: url(../imgs/girls.png);
+  background-position: 0 0;
+}
+
+.start .ar-box-1 {
+  .animation( arBoxOne 5s 23.8s forwards; arBoxesOut linear .8s 28s forwards);
+}
+
+.ar-box-2 {
+  width: 240px;
+  margin-left: 20px;
+  background-color: @red2;
+  background-image: url(../imgs/girls.png);
+  background-position: -415px 0;
+}
+
+.start .ar-box-2 {
+  .animation( arBoxTwo 5s 23.8s forwards; arBoxesOut linear .8s 28.2s forwards);
+}
+
+.ar-text {
+  width: 800px;
+  position: absolute;
+  top: 365px;
+  left: 220px;
+  font-size: 140px;
+
+  div {
+    float: left;
+    margin-top: -500px;
+    margin-bottom: 600px;
+  }
+}
+
+.start .letter-1 {
+  .animation( arLetterIn linear .3s 24.4s forwards; arLetterOut linear .3s 28.7s forwards);
+}
+
+.start .letter-2 {
+  .animation( arLetterIn linear .3s 24.7s forwards; arLetterOut linear .3s 28.4s forwards);
+}
+
+.start .letter-3 {
+  .animation( arLetterIn linear .3s 25s forwards; arLetterOut linear .3s 29s forwards);
+}
+
+.start .letter-4 {
+  .animation( arLetterIn linear .3s 25.3s forwards; arLetterOut linear .3s 28.7s forwards);
+}
+
+.start .letter-5 {
+  .animation( arLetterIn linear .3s 25.6s forwards; arLetterOut linear .3s 29s forwards);
+}
+
+.start .letter-6 {
+  .animation( arLetterIn linear .3s 25.9s forwards; arLetterOut linear .3s 28.7s forwards);
+}
+

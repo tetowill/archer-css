@@ -1,0 +1,58 @@
+
+@black: #000000;
+
+@white: #ffffff;
+
+@green1: #9abb34;
+@green2: #6deac9;
+@green3: #5efbaf;
+@green4: #5cfa4b;
+@green5: #65d71f;
+
+@orange1: #f6b200;
+@orange2: #f48a00;
+
+@blue1: #2e43ff;
+@blue2: #3b39d5;
+@blue3: #6fefff;
+@blue4: #3135e6;
+
+@purple1: #742689;
+@purple2: #8f215d;
+@purple3: #5330e1;
+
+@pink: #f447ff;
+
+@gold: #ebbf07;
+
+@yellow: #ebec00;
+
+@red1: #f03926;
+@red2: #f23d00;
+
+
+.hd {
+  width: 1080px;
+  height: 608px;
+}
+
+.animation(@args) {
+  -webkit-animation: @args;
+  animation: @args;
+}
+.animation(@args, @args2) {
+  -webkit-animation: @args, @args2;
+  animation: @args, @args2;
+}
+.animation(@args, @args2, @args3) {
+  -webkit-animation: @args, @args2, @args3;
+  animation: @args, @args2, @args3;
+}
+.transform(@args) {
+  -webkit-transform: @args;
+  transform: @args;
+}
+.transform-origin(@args) {
+  -webkit-transform-origin: @args;
+  transform-origin: @args;
+}
