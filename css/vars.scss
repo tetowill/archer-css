@@ -1,0 +1,76 @@
+
+$black: #000000;
+
+$white: #ffffff;
+
+$green1: #9abb34;
+$green2: #6deac9;
+$green3: #5efbaf;
+$green4: #5cfa4b;
+$green5: #65d71f;
+
+$orange1: #f6b200;
+$orange2: #f48a00;
+
+$blue1: #2e43ff;
+$blue2: #3b39d5;
+$blue3: #6fefff;
+$blue4: #3135e6;
+
+$purple1: #742689;
+$purple2: #8f215d;
+$purple3: #5330e1;
+
+$pink: #f447ff;
+
+$gold: #ebbf07;
+
+$yellow: #ebec00;
+
+$red1: #f03926;
+$red2: #f23d00;
+
+
+@mixin hd {
+  // aspect ratio 135 : 76
+  // width: 1080px;
+  // height: 608px;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+  & {
+    *zoom: 1;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
